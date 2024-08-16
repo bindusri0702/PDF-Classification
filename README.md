@@ -1,10 +1,9 @@
-	> blockquote
 # Classification of PDFs from Web URLs
 
 
 The task is to class PDFs into one of the four categories Lighting, Fuses, Cables and Others. This is a supervised multi-class classification. The input to the model is URL containing the PDF and the output is a category classified.
 
-*Explain your solution?*
+** *Explain your solution?* **
 
 ## Model Workflow
 
