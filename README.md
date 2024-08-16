@@ -60,10 +60,12 @@ Accuracy is chosen to evaluate models, firstly because the data is almost balanc
 
 ### Pre-requisites
 The model requires Flask to be installed.
-   **Install the required dependencies** using `requirements.txt`:
-   ```bash
-   pip install -r requirements.txt
-   ```
+
+
+**Install the required dependencies** using `requirements.txt`:
+```bash
+pip install -r requirements.txt
+```
 
 ### Installation
 
@@ -81,8 +83,11 @@ The model requires Flask to be installed.
    ```bash
    python deep.py
    ```
-#### Inference pipeline 
-The model can also be run directly from ```get_label_from_url``` function in Parspec_assign.ipynb, without the necessity of Flask intsllation.
+
+   
+## Inference pipeline 
+The model can also be run directly from **```get_label_from_url```** function in ```Parspec_assign.ipynb```, without the necessity of Flask intsllation.
+
 
 *How long did it take to solve the problem?*
 
