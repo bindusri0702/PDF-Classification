@@ -1,0 +1,246 @@
+h1 {
+  text-align: center;
+  }
+  
+  
+  /* Container to hold the tables */
+  .table-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Center-align items horizontally */
+  align-items: center;
+  margin-top: 20px; /* Optional margin for spacing */
+  }
+  
+  /* Style for individual tables */
+  .table-container div {
+  width: 40%; /* Set width to 100% for full width */
+  padding: 2px; /* Optional padding around the image */
+  box-sizing: border-box; /* Include padding in the image width */
+  /*border: 1px solid rgba(221, 221, 221, 0.482); /* Transparent border */
+  text-align: center;
+  }
+  
+  
+  
+  /* Container to hold the boxplot images */
+  .boxplot-container {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-around; /* Space items evenly */
+  margin-top: 20px; /* Optional margin for spacing */
+  }
+  
+  .boxplot-container img {
+  width: 100%; /* Set width to 100% for full width */
+  padding: 4px; /* Optional padding around the image */
+  box-sizing: border-box; /* Include padding in the image width */
+  /*border: 1px solid rgba(221, 221, 221, 0.427); /* Transparent border */
+  }
+  
+  
+  
+  
+  /* Style for images within plot containers */
+  .img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  body {
+    display: flex;
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #f5f5f5; /* Optional background color */
+}
+
+.container {
+    text-align: center; /* Center-align content within the container */
+}
+
+.centered-form {
+    display: inline-block; /* Display as inline-block for centering */
+    padding: 20px; /* Add padding around the form */
+    border: 1px solid #ccc; /* Optional border */
+    background-color: #fff; /* Optional background color */
+}
+
+
+
+ /* only above */
+
+
+ .header {
+  padding: 40px;
+  text-align: center;
+  background: #1abc9c;
+}
+
+body {
+background-color: white;
+  }
+
+/* img {
+    width: 100%;
+    height: 300px;
+   
+} */
+h2{
+  text-align: center;
+}
+
+
+input[type=submit] {
+    width: 20%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: #3CBC8D;
+    color: white;
+  }
+
+/* for Navigator */
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #ccc;
+  }
+  
+  li {
+    float: left;
+  }
+  
+  li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover:not(.active) {
+    background-color: orange ;
+  }
+  
+  .active {
+    background-color:#04AA6D;
+  }
+
+  input[type="text"] {
+    padding: 6px;
+    margin-bottom: 10px;
+}
+#suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none; /* Initially hide the suggestions */
+}
+#suggestions li {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+}
+#suggestions li:hover {
+    background-color: #f2f2f2;
+}
+
+.topleft {
+  position: absolute;
+  top: 15px;
+  left: 250px;
+  font-size: 30px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color:#FF7F50;
+  color: white;
+  text-align: center;
+  height:65px;
+  font-size: 14px;
+}
+
+/* Column container */
+.row {  
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+}
+
+/* Create two unequal columns that sits next to each other */
+/* Sidebar/left column */
+.side {
+  -ms-flex: 30%; /* IE10 */
+  flex: 30%;
+  background-color: #f1f1f1;
+  padding: 20px;
+}
+
+/* Main column */
+.main {   
+  -ms-flex: 70%; /* IE10 */
+  flex: 70%;
+  background-color: white;
+  padding: 20px;
+}
+
+/* Fake image, just for this example */
+.fakeimg {
+  background-color: #aaa;
+  width: 100%;
+  padding: 20px;
+}
+
+* {box-sizing: border-box;}
+body {font-family: Verdana, sans-serif;}
+.mySlides {display: none;}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+/* The dots/bullets/indicators */
+.dot {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .text {font-size: 11px}
+}
+
+    
