@@ -1,3 +1,4 @@
+	> blockquote
 # Classification of PDFs from Web URLs
 
 
@@ -6,6 +7,9 @@ The task is to class PDFs into one of the four categories Lighting, Fuses, Cable
 *Explain your solution?*
 
 ## Model Workflow
+
+![Workflow]<img width="341" alt="image" src="https://github.com/user-attachments/assets/82435abb-6944-4f86-bc09-73e757942e21">
+
 
 1. PDFs were read from the provided URLs.
 2. The retrieved data was cleaned by retaining only alphabetic characters and spaces. Words shorter than four characters that are stopwords, image unicodes, and table elements, were removed.
@@ -44,8 +48,9 @@ In this case, both logical heuristics and machine learning models were explored 
 
 *Any shortcomings and how can we improve the performance?*
 
-In logical heuristics approach 19 documents are being misclassified by the rules built, when validated it is found that most of these documents doesn’t have the product name specified in the entire PDF or it is not in the textual format that can be read. Sometimes PDFs that should be classified as “others” are misclassified into lighting, cable or fuses, because the PDFs appears to be using more of these words while describing product.
-After careful analysis of misclassified PDFs, it is found that word “Lamp” is used as an alias to “lighting” in many PDFs, so this rule is also used in classification task. Similarly we can construct complex rules to categorise the PDF documents, in such a way they don’t overfit the model.
+- In logical heuristics approach 19 documents are being misclassified by the rules built, when validated it is found that most of these documents doesn’t have the product name specified in the entire PDF or it is not in the textual format that can be read.
+- Sometimes PDFs that should be classified as “others” are misclassified into lighting, cable or fuses, because the PDFs appears to be using more of these words while describing product.
+- After careful analysis of misclassified PDFs, it is found that word “Lamp” is used as an alias to “lighting” in many PDFs, so this rule is also used in classification task. Similarly we can construct complex rules to categorise the PDF documents, in such a way they don’t overfit the model.
 
 *Report the model's performance on the test data using an appropriate metric. Explain why you chose this particular metric.*
 
