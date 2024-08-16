@@ -4,12 +4,12 @@ To run a template for GitHub:
 
 1. **Clone the repository**: 
    ```bash
-   git clone [<repository_url>](https://github.com/bindusri0702/Parspec_Assignment)
+   git clone https://github.com/bindusri0702/Parspec_Assignment.git
    ```
 
 2. **Navigate to the project directory**:
    ```bash
-   cd [<project_directory>](Parspec_Assignment/flask_app/)
+   cd Parspec_Assignment/flask_app
    ```
 
 3. **Install the required dependencies** using `requirements.txt`:
