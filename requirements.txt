@@ -1,0 +1,8 @@
+pymupdf
+requests
+scikit-learn
+pandas
+tqdm
+nltk
+flask
+numpy
