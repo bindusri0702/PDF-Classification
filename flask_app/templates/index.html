@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classify online PDFs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .search-container {
+            text-align: center;
+        }
+        
+        .search-input {
+            width: 400px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 20px;
+            font-size: 16px;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        
+        .search-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-button:hover {
+            background-color: #0056b3;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="search-container">
+        <h1><b>Classify online PDFs</b></h1>
+        <p><i>Retrieval and Classification tool</i></p>
+        <form action="/first" method="post">
+            <input type="text" class="search-input" name="query" placeholder="https://lfillumination.com/files/specsheets/EF408B-Light-Unit.pdf">
+            <button type="submit" class="search-button">Classify</button>
+        </form>
+        <p style="font-size: 16px; color: #888;">The PDFs are classified into Lighting, Cable, Fuses and others</p>
+    </div>
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+

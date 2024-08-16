@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="py_folder/static/css/style.css">
+    <!-- header -->
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+
+    <style>
+        .centered-result {
+            text-align: center;
+            font-size: 5.6em;
+        }
+    </style>
+
+    <!-- Container to hold the tables -->
+    <style>
+        .table-container {
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Center-align items horizontally */
+            align-items: center;
+            margin-top: 20px; /* Optional margin for spacing */
+        }
+
+        /* Style for individual tables */
+        .table-container div {
+            width: 40%; /* Set width to 100% for full width */
+            padding: 2px; /* Optional padding around the image */
+            box-sizing: border-box; /* Include padding in the image width */
+            /*border: 1px solid rgba(221, 221, 221, 0.482); /* Transparent border */
+            text-align: center;
+        }
+    </style>
+    <!-- Container to hold the boxplot images */ -->
+    <style>
+        .boxplot-container {
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-around; /* Space items evenly */
+            margin-top: 20px; /* Optional margin for spacing */
+        }
+
+        .boxplot-container img {
+            max-width: 100%; /* Set width to 100% for full width */
+            padding: 4px; /* Optional padding around the image */
+            box-sizing: border-box; /* Include padding in the image width */
+            /*border: 1px solid rgba(221, 221, 221, 0.427); /* Transparent border */
+        }
+
+
+    </style>
+    <!-- Style for images within plot containers -->
+    <style>
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+   
+    <h1>Classify online PDFs</h1>
+    <p><i>Retrieval and Classification tool</i></p>
+    <form action="/first" method="post">
+        <input type="text" name="query" class="search-input" placeholder="https://lfillumination.com/files/specsheets/EF408B-Light-Unit.pdf">
+        <button type="submit" class="search-button">Classify</button>
+    </form>
+    
+
+    {% if result is not none %}
+    <pre class="centered-result">
+        {{ result | safe }}
+    </pre>
+    {% endif %}
+    
+
+
+    
+    <div class="img">
+        {% if df_url %}
+        <div>
+            <h1>Extracted data Plot</h1>
+            <img src="data:image/png;base64,{{ df_url }}" alt="DataFrame Plot">
+            <div>
+                <a href="data:image/png;base64,{{ df_url }}" download="df_plot.png">
+                    <button>Download plot</button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    
+        {% if mom_url %}
+        <div>
+            <h1>M-O-M Plot</h1>
+            <img src="data:image/png;base64,{{ mom_url }}" alt="M-O-M Plot">
+            <div>
+                <a href="data:image/png;base64,{{ mom_url }}" download="mom_plot.png">
+                    <button>Download M-O-M plot</button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    
+        {% if yoy_url %}
+        <div>
+            <h1>Y-O-Y Plot</h1>
+            <img src="data:image/png;base64,{{ yoy_url }}" alt="Y-O-Y Plot">
+            <div>
+                <a href="data:image/png;base64,{{ yoy_url }}" download="yoy_plot.png">
+                    <button>Download Y-O-Y plot</button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+    <div class="boxplot-container">
+        <!-- Boxplot of Extracted Data -->
+        {% if df_box %}
+        <div>
+            <h1>Boxplot of Extracted Data</h1>
+            <img src="data:image/png;base64,{{ df_box }}" alt="Boxplot of Extracted Data">
+            <div>
+                <a href="data:image/png;base64,{{ df_box }}" download="df_box_plot.png">
+                    <button>Download Boxplot</button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    
+        <!-- Boxplot of M-O-M Data -->
+        {% if mom_box %}
+        <div>
+            <h1>Boxplot of M-O-M Data</h1>
+            <img src="data:image/png;base64,{{ mom_box }}" alt="Boxplot of M-O-M Data">
+            <div>
+                <a href="data:image/png;base64,{{ mom_box }}" download="mom_box_plot.png">
+                    <button>Download M-O-M Boxplot</button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    
+        <!-- Boxplot of Y-O-Y Data -->
+        {% if yoy_box %}
+        <div>
+            <h1>Boxplot of Y-O-Y Data</h1>
+            <img src="data:image/png;base64,{{ yoy_box }}" alt="Boxplot of Y-O-Y Data">
+            <div>
+                <a href="data:image/png;base64,{{ yoy_box }}" download="yoy_box_plot.png">
+                    <button>Download Y-O-Y Boxplot</button>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+    
+
+    <div class="table-container">
+        <!-- Item Table -->
+        {% if item_table %}
+        <div>
+            <h2>Data Table</h2>
+            {{ item_table | safe }}
+        </div>
+        {% endif %}
+
+        <!-- M-O-M Table -->
+        {% if mom_table %}
+        <div>
+            <h2>M-O-M Table</h2>
+            {{ mom_table | safe }}
+        </div>
+        {% endif %}
+
+        <!-- Y-O-Y Table -->
+        {% if yoy_table %}
+        <div>
+            <h2>Y-O-Y Table</h2>
+            {{ yoy_table | safe }}
+        </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>
+
