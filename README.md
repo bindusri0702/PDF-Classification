@@ -1,5 +1,30 @@
 # Classification of PDFs from Web URLs
 
+To run a template for GitHub:
+
+1. **Clone the repository**: 
+   ```bash
+   git clone [<repository_url>](https://github.com/bindusri0702/Parspec_Assignment)
+   ```
+
+2. **Navigate to the project directory**:
+   ```bash
+   cd [<project_directory>](Parspec_Assignment/flask_app/)
+   ```
+
+3. **Install the required dependencies** using `requirements.txt`:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Run your application or script** as specified in your project’s documentation. For example:
+   ```bash
+   python deep.py
+   ```
+
+This should set up and run the template locally.
+
+
 The process involved 90 minutes for data retrieval from web PDFs, followed by 120 minutes dedicated to preprocessing and applying a brute force classification approach. An additional 120 minutes were spent on machine learning model classification and Flask app development. Overall, the entire workflow, from initial planning to complete model building, was completed in under 6 hours.
 
 . PDFs were read from the provided URLs.
