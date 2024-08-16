@@ -7,8 +7,10 @@ The task is to class PDFs into one of the four categories Lighting, Fuses, Cable
 
 ## Model Workflow
 
-![Workflow]<img width="341" alt="image" src="https://github.com/user-attachments/assets/82435abb-6944-4f86-bc09-73e757942e21">
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/82435abb-6944-4f86-bc09-73e757942e21" alt="Image Description" width="341">
+</p>
+<p align="center"><i>Model Workflow</i></p>
 
 1. PDFs were read from the provided URLs.
 2. The retrieved data was cleaned by retaining only alphabetic characters and spaces. Words shorter than four characters that are stopwords, image unicodes, and table elements, were removed.
