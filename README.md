@@ -3,6 +3,8 @@
 
 The task is to class PDFs into one of the four categories Lighting, Fuses, Cables and Others. This is a supervised multi-class classification. The input to the model is URL containing the PDF and the output is a category classified.
 
+*Explain your solution?*
+
 ## Model Workflow
 
 1. PDFs were read from the provided URLs.
@@ -35,10 +37,33 @@ methodology and considerations.
 
 3. **Deep Learning Models**: In this approach, feature extraction is handled automatically by the model itself. You don't need to explicitly define features; instead, the model learns patterns and representations directly from the data. The performance of deep learning models is influenced by the complexity of the patterns in the data and the amount of data available. They can capture intricate patterns that might be missed by simpler models, but they also require large datasets and significant computational resources. Additionally, the inner workings of deep learning models are often less interpretable, making it harder to understand how they arrive at their decisions.
 
+
+*Which model did you use and why?*
+
 In this case, both logical heuristics and machine learning models were explored and compared. However, deep learning models were not pursued because they typically require larger datasets and well-structured, syntactically and semantically coherent sentences for effective training. This level of data quality is often lacking in product manuals, making deep learning less suitable for this specific task.
+
+*Any shortcomings and how can we improve the performance?*
+
 In logical heuristics approach 19 documents are being misclassified by the rules built, when validated it is found that most of these documents doesn’t have the product name specified in the entire PDF or it is not in the textual format that can be read. Sometimes PDFs that should be classified as “others” are misclassified into lighting, cable or fuses, because the PDFs appears to be using more of these words while describing product.
 After careful analysis of misclassified PDFs, it is found that word “Lamp” is used as an alias to “lighting” in many PDFs, so this rule is also used in classification task. Similarly we can construct complex rules to categorise the PDF documents, in such a way they don’t overfit the model.
+
+*Report the model's performance on the test data using an appropriate metric. Explain why you chose this particular metric.*
+
+| Model | Accuracy |
+| ----------- | ----------- |
+| Logical-Heuristic model | 92% |
+| KNN Classifier | 76% |
+| RandomForest Classifier | 72% |
+| GradientBoosting Classifier | 76% |
+
 Accuracy is chosen to evaluate models, firstly because the data is almost balanced, secondly the cost of false positives is same as cost of false negatives in this case.
+
+### Pre-requisites
+The model requires Flask to be installed.
+   **Install the required dependencies** using `requirements.txt`:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 ### Installation
 
@@ -52,17 +77,14 @@ Accuracy is chosen to evaluate models, firstly because the data is almost balanc
    cd Parspec_Assignment/flask_app
    ```
 
-3. **Install the required dependencies** using `requirements.txt`:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Run your application or script** as specified in your project’s documentation. For example:
+3. **Run your application or script** as specified in your project’s documentation. For example:
    ```bash
    python deep.py
    ```
+#### Inference pipeline 
+The model can also be run directly from ```get_label_from_url``` function in Parspec_assign.ipynb, without the necessity of Flask intsllation.
 
-
+*How long did it take to solve the problem?*
 
 The process involved 90 minutes for data retrieval from web PDFs, followed by 120 minutes dedicated to preprocessing and applying a brute force classification approach. An additional 120 minutes were spent on machine learning model classification and Flask app development. Overall, the entire workflow, from initial planning to complete model building, was completed in under 6 hours.
 
