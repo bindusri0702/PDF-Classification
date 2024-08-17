@@ -1,7 +1,7 @@
 # Classification of PDFs from Web URLs
 
 
-The task is to class PDFs into one of the four categories Lighting, Fuses, Cables and Others. This is a supervised multi-class classification. The input to the model is URL containing the PDF and the output is a category classified.
+The task is to classify PDFs into one of the four categories Lighting, Fuses, Cables and Others. This is a supervised multi-class classification. The input to the model is URL containing the PDF and the output is the category classified.
 
 ## Model Workflow
 
@@ -11,7 +11,7 @@ The task is to class PDFs into one of the four categories Lighting, Fuses, Cable
 <p align="center"><i>Model Workflow</i></p>
 
 1. PDFs were read from the provided URLs.
-2. The retrieved data was cleaned by retaining only alphabetic characters and spaces. Words shorter than four characters that are stopwords, image unicodes, and table elements, were removed.
+2. The retrieved data was cleaned by retaining only alphabetic characters and spaces. Words shorter than four characters that are stopwords, image unicodes, and table encoding elements, were removed.
 3. PDFs that failed to render properly, such as those with request timeout errors, HTTP errors, or PDFs where the text was displayed as an image, were identified and removed.
 4. Rows with no text, resulting from invalid URLs, were discarded.
 5. Classification of PDFs was performed using the following methods:
@@ -56,7 +56,7 @@ In this case, both logical heuristics and machine learning models were explored 
 | RandomForest Classifier | 72% |
 | GradientBoosting Classifier | 76% |
 
-Accuracy is chosen to evaluate models, firstly because the data is almost balanced, secondly the cost of false positives is same as cost of false negatives in this case.
+Accuracy is chosen to evaluate models, firstly because the data is almost balanced, secondly the cost of false positives is same as cost of false negatives in this case, so precision and recall doesn't mean anything in this task.
 
 ### Pre-requisites
 The model requires Flask to be installed.
@@ -86,7 +86,7 @@ pip install -r requirements.txt
 
    
 ## Inference pipeline 
-The model can also be run directly from **```get_label_from_url```** function in ```Parspec_assign.ipynb```, without the necessity of Flask intsllation.
+The model can also be run directly from **```get_label_from_url```** function in ```Parspec_assign.ipynb```, without the necessity of Flask installation.
 
 
 The process involved 90 minutes for data retrieval from web PDFs, followed by 120 minutes dedicated to preprocessing and applying a brute force classification approach. An additional 120 minutes were spent on machine learning model classification and Flask app development. Overall, the entire workflow, from initial planning to complete model building, was completed in under 6 hours.
